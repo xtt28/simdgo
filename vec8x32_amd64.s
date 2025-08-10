@@ -1,6 +1,8 @@
 //go:build !noavx
 
-TEXT ·Vec8x32Add(SB), $0-24
+#include "textflag.h"
+
+TEXT ·Vec8x32Add(SB), NOSPLIT, $0-24
     MOVQ a+0(FP), AX
     MOVQ b+8(FP), CX
     MOVQ d+16(FP), DX
@@ -11,7 +13,7 @@ TEXT ·Vec8x32Add(SB), $0-24
     VZEROUPPER
     RET
 
-TEXT ·Vec8x32Sub(SB), $0-24
+TEXT ·Vec8x32Sub(SB), NOSPLIT, $0-24
     MOVQ a+0(FP), AX
     MOVQ b+8(FP), CX
     MOVQ d+16(FP), DX
@@ -22,7 +24,7 @@ TEXT ·Vec8x32Sub(SB), $0-24
     VZEROUPPER
     RET
 
-TEXT ·Vec8x32Mul(SB), $0-24
+TEXT ·Vec8x32Mul(SB), NOSPLIT, $0-24
     MOVQ a+0(FP), AX
     MOVQ b+8(FP), CX
     MOVQ d+16(FP), DX
@@ -33,7 +35,7 @@ TEXT ·Vec8x32Mul(SB), $0-24
     VZEROUPPER
     RET
 
-TEXT ·Vec8x32Div(SB), $0-24
+TEXT ·Vec8x32Div(SB), NOSPLIT, $0-24
     MOVQ a+0(FP), AX
     MOVQ b+8(FP), CX
     MOVQ d+16(FP), DX

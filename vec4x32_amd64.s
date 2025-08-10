@@ -1,6 +1,8 @@
 //go:build !nosse
 
-TEXT ·Vec4x32Add(SB), $0-24
+#include "textflag.h"
+
+TEXT ·Vec4x32Add(SB), NOSPLIT, $0-24
     MOVQ a+0(FP), AX
     MOVQ b+8(FP), CX
     MOVQ d+16(FP), DX
@@ -10,7 +12,7 @@ TEXT ·Vec4x32Add(SB), $0-24
     MOVAPS X0, (DX)
     RET
 
-TEXT ·Vec4x32Sub(SB), $0-24
+TEXT ·Vec4x32Sub(SB), NOSPLIT, $0-24
     MOVQ a+0(FP), AX
     MOVQ b+8(FP), CX
     MOVQ d+16(FP), DX
@@ -20,7 +22,7 @@ TEXT ·Vec4x32Sub(SB), $0-24
     MOVAPS X0, (DX)
     RET
 
-TEXT ·Vec4x32Mul(SB), $0-24
+TEXT ·Vec4x32Mul(SB), NOSPLIT, $0-24
     MOVQ a+0(FP), AX
     MOVQ b+8(FP), CX
     MOVQ d+16(FP), DX
@@ -30,7 +32,7 @@ TEXT ·Vec4x32Mul(SB), $0-24
     MOVAPS X0, (DX)
     RET
 
-TEXT ·Vec4x32Div(SB), $0-24
+TEXT ·Vec4x32Div(SB), NOSPLIT, $0-24
     MOVQ a+0(FP), AX
     MOVQ b+8(FP), CX
     MOVQ d+16(FP), DX
